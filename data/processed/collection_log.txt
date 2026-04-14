@@ -1,0 +1,40 @@
+=======================================================
+F1 Data Collection — DSA 210 Project
+=======================================================
+
+=== STEP 1: Downloading Kaggle F1 Dataset ===
+Downloading rohanrao/formula-1-world-championship-1950-2020 from Kaggle...
+Download complete.
+All 10 expected CSV files found.
+
+=== STEP 2: Loading Kaggle CSVs ===
+  Loaded races.csv: (1125, 18)
+  Loaded results.csv: (26759, 18)
+  Loaded drivers.csv: (861, 9)
+  Loaded constructors.csv: (212, 5)
+  Loaded qualifying.csv: (10494, 9)
+  Loaded circuits.csv: (77, 9)
+  Loaded driver_standings.csv: (34863, 7)
+  Loaded constructor_standings.csv: (13391, 7)
+  Loaded lap_times.csv: (589081, 6)
+
+=== STEP 3: Fetching Circuit Data from Ergast API ===
+  Using cached ergast_circuits.json
+  Fetched 78 circuits from Ergast.
+
+=== STEP 4: Fetching Recent Qualifying Data (2021–2024) ===
+  Using cached ergast_qualifying_recent.json
+  Fetched 400 qualifying rows (2021–2024).
+
+=== STEP 5: Building Master Dataset ===
+  Merging results → races → drivers → constructors → circuits...
+  Master dataset shape: (26759, 29)
+  Years covered: 1950 – 2024
+  Races: 1125
+  Drivers: 861
+  Winners (is_winner=1): 1128
+
+=== STEP 6: Saving Processed Files ===
+  Saved: data\processed\master_dataset.csv  (4390 KB)
+  Saved: data\processed\circuits_enriched.csv
+  Saved: data\processed\qualifying_recent.csv
